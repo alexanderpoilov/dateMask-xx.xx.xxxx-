@@ -32,45 +32,45 @@ function maskPhone(selector, masked) {
 	
 		if (this.value.length > 10) {
 			return value.substring(0, 10);
-	}
-	switch (this.value.length) {
+		}
+
+		switch (this.value.length) {
 			case 1: 
-					if (this.value > 3) {
-							this.value = "3";
-					}
-					break;
+				if (this.value > 3) {
+						this.value = "3";
+				}
+				break;
 			case 2: 
 			case 3:
-					if (+this.value.slice(0, 2) > 31) {
-						this.value = "31-";
-					}
-					break;
+				if (+this.value.slice(0, 2) > 31) {
+					this.value = "31-";
+				}
+				break;
 			case 4:
-					if (this.value[2] !== "-") {
-							this.value = this.value.substr(0, 2) + "-" + this.value[2];
-					}
-					if (this.value[3] > 1) {
-							this.value = this.value.substr(0, 3) + "1";
-					}
-					break;
+				if (this.value[2] !== "-") {
+						this.value = this.value.substr(0, 2) + "-" + this.value[2];
+				}
+				if (this.value[3] > 1) {
+						this.value = this.value.substr(0, 3) + "1";
+				}
+				break;
 			case 5: 
-					if (this.value.substr(3, 2) > 12) {
-							this.value = this.value.substr(0, 3) + "12";
-					}
-					break;
+				if (this.value.substr(3, 2) > 12) {
+						this.value = this.value.substr(0, 3) + "12";
+				}
+				break;
 			case 6:
 			case 7:
-					if (this.value[5] !== "-") {
-							this.value = this.value.substr(0, 5) + "-" + this.value[5];
-					}
-					if (this.value[6] < 1) {
-							this.value = this.value.substr(0, 6) + "1";
-					}
-					break;
+				if (this.value[5] !== "-") {
+						this.value = this.value.substr(0, 5) + "-" + this.value[5];
+				}
+				if (this.value[6] < 1) {
+						this.value = this.value.substr(0, 6) + "1";
+				}
+				break;
 			default: 
-					break;
-	}
-
+				break;
+		}
 	}
 
 	for (const elem of elems) {
